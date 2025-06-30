@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Measurements - Plastic Surgery Diagnosis System</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="resources/css/app.css">
+</head>
+<body class="bg-gray-50">
+    <!-- Header with Navigation -->
+    <header class="bg-white shadow-lg border-b border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <div class="w-10 h-10 bg-gradient-to-br from-blue-600 to-purple-600 rounded-lg flex items-center justify-center">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                    </div>
+                    <h1 class="ml-3 text-xl font-bold text-gray-900">Plastic Surgery Diagnosis</h1>
+                </div>
+
+                <!-- Navigation Links -->
+                <nav class="hidden md:flex space-x-8">
+                    <a href="index.html" class="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">
+                        Overview
+                    </a>
+                    <a href="image-analysis.html" class="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">
+                        Image Analysis
+                    </a>
+                    <a href="3d-modeling.html" class="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">
+                        3D Modeling
+                    </a>
+                    <a href="measurements.html" class="text-blue-600 hover:text-blue-700 px-3 py-2 rounded-md text-sm font-medium transition-colors border-b-2 border-blue-600">
+                        Measurements
+                    </a>
+                    <a href="reports.html" class="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">
+                        Reports
+                    </a>
+                </nav>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden">
+                    <button type="button" class="text-gray-500 hover:text-gray-700 focus:outline-none">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div class="mb-8">
+            <h2 class="text-2xl font-bold text-gray-900">Measurements & Analysis</h2>
+            <p class="text-gray-600 mt-2">Precise facial measurements and proportional analysis tools</p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+            <!-- Measurement Tools -->
+            <div class="lg:col-span-2 bg-white rounded-xl shadow-lg p-6">
+                <div class="flex items-center justify-between mb-4">
+                    <h3 class="text-lg font-bold text-gray-800">Measurement Tools</h3>
+                    <div class="flex gap-2">
+                        <button class="measurement-tool p-2 rounded-lg border hover:bg-gray-50 active" title="Linear Measurement">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21l3-3-3-3m8 6l3-3-3-3M4 4h16v16H4z"></path>
+                            </svg>
+                        </button>
+                        <button class="angle-tool p-2 rounded-lg border hover:bg-gray-50" title="Angle Measurement">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2z"></path>
+                            </svg>
+                        </button>
+                        <button class="curve-tool p-2 rounded-lg border hover:bg-gray-50" title="Curve Measurement">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="image-viewer relative bg-gray-100 rounded-lg overflow-hidden" style="height: 500px;">
+                    <img src="https://images.pexels.com/photos/3845457/pexels-photo-3845457.jpeg?auto=compress&cs=tinysrgb&w=800" 
+                         alt="Patient Photo for Measurement" 
+                         class="w-full h-full object-cover">
+                    
+                    <!-- Sample measurements will be added here by JavaScript -->
+                </div>
+
+                <div class="mt-4 grid grid-cols-3 gap-4 text-sm">
+                    <div class="text-center p-3 bg-blue-50 rounded-lg">
+                        <p class="font-medium text-blue-800">Active Tool</p>
+                        <p class="text-blue-600">Linear Measurement</p>
+                    </div>
+                    <div class="text-center p-3 bg-green-50 rounded-lg">
+                        <p class="font-medium text-green-800">Measurements</p>
+                        <p class="text-green-600">3 Active</p>
+                    </div>
+                    <div class="text-center p-3 bg-purple-50 rounded-lg">
+                        <p class="font-medium text-purple-800">Precision</p>
+                        <p class="text-purple-600">±0.1mm</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Measurement Data -->
+            <div class="space-y-6">
+                <!-- Current Measurements -->
+                <div class="bg-white rounded-xl shadow-lg p-6">
+                    <h3 class="text-lg font-bold text-gray-800 mb-4">Current Measurements</h3>
+                    
+                    <div class="space-y-3">
+                        <div class="flex justify-between items-center p-3 bg-gray-50 rounded-lg">
+                            <span class="text-sm font-medium text-gray-700">Nose Length</span>
+                            <span class="text-sm font-bold text-blue-600">45.2mm</span>
+                        </div>
+                        
+                        <div class="flex justify-between items-center p-3 bg-gray-50 rounded-lg">
+                            <span class="text-sm font-medium text-gray-700">Nose Width</span>
+                            <span class="text-sm font-bold text-blue-600">32.8mm</span>
+                        </div>
+                        
+                        <div class="flex justify-between items-center p-3 bg-gray-50 rounded-lg">
+                            <span class="text-sm font-medium text-gray-700">Eye Distance</span>
+                            <span class="text-sm font-bold text-blue-600">62.1mm</span>
+                        </div>
+                        
+                        <div class="flex justify-between items-center p-3 bg-gray-50 rounded-lg">
+                            <span class="text-sm font-medium text-gray-700">Face Width</span>
+                            <span class="text-sm font-bold text-blue-600">142.5mm</span>
+                        </div>
+                        
+                        <div class="flex justify-between items-center p-3 bg-gray-50 rounded-lg">
+                            <span class="text-sm font-medium text-gray-700">Face Height</span>
+                            <span class="text-sm font-bold text-blue-600">185.3mm</span>
+                        </div>
+                    </div>
+                    
+                    <button class="w-full mt-4 bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700 transition-colors">
+                        Export Measurements
+                    </button>
+                </div>
+
+                <!-- Proportional Analysis -->
+                <div class="bg-white rounded-xl shadow-lg p-6">
+                    <h3 class="text-lg font-bold text-gray-800 mb-4">Proportional Analysis</h3>
+                    
+                    <div class="space-y-4">
+                        <div>
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="text-sm font-medium text-gray-700">Golden Ratio</span>
+                                <span class="text-sm font-bold text-green-600">1.618</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-green-500 h-2 rounded-full" style="width: 85%"></div>
+                            </div>
+                            <p class="text-xs text-gray-500 mt-1">85% match</p>
+                        </div>
+                        
+                        <div>
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="text-sm font-medium text-gray-700">Facial Thirds</span>
+                                <span class="text-sm font-bold text-yellow-600">Moderate</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-yellow-500 h-2 rounded-full" style="width: 72%"></div>
+                            </div>
+                            <p class="text-xs text-gray-500 mt-1">72% symmetry</p>
+                        </div>
+                        
+                        <div>
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="text-sm font-medium text-gray-700">Nose Proportion</span>
+                                <span class="text-sm font-bold text-blue-600">Good</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-blue-500 h-2 rounded-full" style="width: 78%"></div>
+                            </div>
+                            <p class="text-xs text-gray-500 mt-1">78% ideal</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Measurement History -->
+                <div class="bg-white rounded-xl shadow-lg p-6">
+                    <h3 class="text-lg font-bold text-gray-800 mb-4">Measurement History</h3>
+                    
+                    <div class="space-y-3">
+                        <div class="p-3 border border-gray-200 rounded-lg">
+                            <div class="flex justify-between items-center mb-1">
+                                <span class="text-sm font-medium text-gray-700">Session #3</span>
+                                <span class="text-xs text-gray-500">2024-01-15</span>
+                            </div>
+                            <p class="text-xs text-gray-600">5 measurements recorded</p>
+                        </div>
+                        
+                        <div class="p-3 border border-gray-200 rounded-lg">
+                            <div class="flex justify-between items-center mb-1">
+                                <span class="text-sm font-medium text-gray-700">Session #2</span>
+                                <span class="text-xs text-gray-500">2024-01-08</span>
+                            </div>
+                            <p class="text-xs text-gray-600">3 measurements recorded</p>
+                        </div>
+                        
+                        <div class="p-3 border border-gray-200 rounded-lg">
+                            <div class="flex justify-between items-center mb-1">
+                                <span class="text-sm font-medium text-gray-700">Session #1</span>
+                                <span class="text-xs text-gray-500">2024-01-01</span>
+                            </div>
+                            <p class="text-xs text-gray-600">7 measurements recorded</p>
+                        </div>
+                    </div>
+                    
+                    <button class="w-full mt-4 bg-gray-600 text-white py-2 px-4 rounded-lg hover:bg-gray-700 transition-colors">
+                        View All History
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Measurement Guidelines -->
+        <div class="mt-8 bg-white rounded-xl shadow-lg p-6">
+            <h3 class="text-lg font-bold text-gray-800 mb-4">Measurement Guidelines</h3>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-blue-100 rounded-full mx-auto mb-3 flex items-center justify-center">
+                        <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                    </div>
+                    <h4 class="font-semibold text-gray-800 mb-2">Accuracy</h4>
+                    <p class="text-sm text-gray-600">Ensure proper image calibration and consistent lighting for accurate measurements.</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-green-100 rounded-full mx-auto mb-3 flex items-center justify-center">
+                        <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                        </svg>
+                    </div>
+                    <h4 class="font-semibold text-gray-800 mb-2">Consistency</h4>
+                    <p class="text-sm text-gray-600">Use standardized anatomical landmarks for reproducible measurements.</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-purple-100 rounded-full mx-auto mb-3 flex items-center justify-center">
+                        <svg class="w-8 h-8 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+                        </svg>
+                    </div>
+                    <h4 class="font-semibold text-gray-800 mb-2">Documentation</h4>
+                    <p class="text-sm text-gray-600">Record all measurements with timestamps and session notes for tracking progress.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="resources/js/app.js"></script>
+</body>
+</html>
