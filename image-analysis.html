@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Analysis - Plastic Surgery Diagnosis System</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="resources/css/app.css">
+</head>
+<body class="bg-gray-50">
+    <!-- Header with Navigation -->
+    <header class="bg-white shadow-lg border-b border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <div class="w-10 h-10 bg-gradient-to-br from-blue-600 to-purple-600 rounded-lg flex items-center justify-center">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                    </div>
+                    <h1 class="ml-3 text-xl font-bold text-gray-900">Plastic Surgery Diagnosis</h1>
+                </div>
+
+                <!-- Navigation Links -->
+                <nav class="hidden md:flex space-x-8">
+                    <a href="index.html" class="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">
+                        Overview
+                    </a>
+                    <a href="image-analysis.html" class="text-blue-600 hover:text-blue-700 px-3 py-2 rounded-md text-sm font-medium transition-colors border-b-2 border-blue-600">
+                        Image Analysis
+                    </a>
+                    <a href="3d-modeling.html" class="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">
+                        3D Modeling
+                    </a>
+                    <a href="measurements.html" class="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">
+                        Measurements
+                    </a>
+                    <a href="reports.html" class="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">
+                        Reports
+                    </a>
+                </nav>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden">
+                    <button type="button" class="text-gray-500 hover:text-gray-700 focus:outline-none">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div class="mb-8">
+            <h2 class="text-2xl font-bold text-gray-900">Image Analysis</h2>
+            <p class="text-gray-600 mt-2">Upload and analyze before/after images for comprehensive patient assessment</p>
+        </div>
+
+        <!-- Image Upload Section -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+            <!-- Before Image Upload -->
+            <div class="bg-white rounded-xl shadow-lg p-6">
+                <h3 class="text-lg font-bold text-gray-800 mb-4">Before Image</h3>
+                <div class="border-2 border-dashed border-gray-300 rounded-lg p-8 text-center hover:border-blue-400 transition-colors">
+                    <input type="file" id="before-image" accept="image/*" class="hidden">
+                    <label for="before-image" class="cursor-pointer">
+                        <div class="w-16 h-16 bg-gray-100 rounded-full mx-auto mb-4 flex items-center justify-center">
+                            <svg class="w-8 h-8 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                            </svg>
+                        </div>
+                        <p class="text-gray-600 mb-2">Click to upload before image</p>
+                        <p class="text-sm text-gray-400">PNG, JPG up to 10MB</p>
+                    </label>
+                </div>
+                <div id="before-preview" class="mt-4 hidden">
+                    <img id="before-img" class="w-full h-64 object-cover rounded-lg" alt="Before image">
+                </div>
+            </div>
+
+            <!-- After Image Upload -->
+            <div class="bg-white rounded-xl shadow-lg p-6">
+                <h3 class="text-lg font-bold text-gray-800 mb-4">After Image</h3>
+                <div class="border-2 border-dashed border-gray-300 rounded-lg p-8 text-center hover:border-blue-400 transition-colors">
+                    <input type="file" id="after-image" accept="image/*" class="hidden">
+                    <label for="after-image" class="cursor-pointer">
+                        <div class="w-16 h-16 bg-gray-100 rounded-full mx-auto mb-4 flex items-center justify-center">
+                            <svg class="w-8 h-8 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                            </svg>
+                        </div>
+                        <p class="text-gray-600 mb-2">Click to upload after image</p>
+                        <p class="text-sm text-gray-400">PNG, JPG up to 10MB</p>
+                    </label>
+                </div>
+                <div id="after-preview" class="mt-4 hidden">
+                    <img id="after-img" class="w-full h-64 object-cover rounded-lg" alt="After image">
+                </div>
+            </div>
+        </div>
+
+        <!-- Comparison View -->
+        <div id="comparison-section" class="bg-white rounded-xl shadow-lg p-6 hidden">
+            <h3 class="text-lg font-bold text-gray-800 mb-4">Before/After Comparison</h3>
+            
+            <div class="comparison-slider relative" style="height: 500px;">
+                <img id="comparison-after" class="absolute inset-0 w-full h-full object-cover rounded-lg" alt="After">
+                <img id="comparison-before" class="before-image absolute inset-0 w-full h-full object-cover rounded-lg" style="clip-path: inset(0 50% 0 0);" alt="Before">
+                <div class="comparison-handle" style="left: 50%;"></div>
+            </div>
+
+            <div class="mt-4 flex justify-between text-sm text-gray-600">
+                <span>Before</span>
+                <span>After</span>
+            </div>
+        </div>
+
+        <!-- Analysis Tools -->
+        <div id="analysis-tools" class="mt-8 bg-white rounded-xl shadow-lg p-6 hidden">
+            <h3 class="text-lg font-bold text-gray-800 mb-4">Analysis Tools</h3>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+                <button class="annotation-tool p-4 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors text-center">
+                    <svg class="w-6 h-6 mx-auto mb-2 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>
+                    </svg>
+                    <span class="text-sm font-medium">Add Annotation</span>
+                </button>
+                
+                <button class="measurement-tool p-4 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors text-center">
+                    <svg class="w-6 h-6 mx-auto mb-2 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21l3-3-3-3m8 6l3-3-3-3M4 4h16v16H4z"></path>
+                    </svg>
+                    <span class="text-sm font-medium">Measure</span>
+                </button>
+                
+                <button class="filter-tool p-4 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors text-center">
+                    <svg class="w-6 h-6 mx-auto mb-2 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.414A1 1 0 013 6.707V4z"></path>
+                    </svg>
+                    <span class="text-sm font-medium">Apply Filters</span>
+                </button>
+            </div>
+
+            <!-- Image Filters -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Brightness</label>
+                    <input type="range" class="filter-control w-full" data-filter="brightness" min="50" max="150" value="100">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Contrast</label>
+                    <input type="range" class="filter-control w-full" data-filter="contrast" min="50" max="150" value="100">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Saturation</label>
+                    <input type="range" class="filter-control w-full" data-filter="saturation" min="0" max="200" value="100">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Blur</label>
+                    <input type="range" class="filter-control w-full" data-filter="blur" min="0" max="10" value="0">
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // Image upload functionality
+        document.getElementById('before-image').addEventListener('change', function(e) {
+            const file = e.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    document.getElementById('before-img').src = e.target.result;
+                    document.getElementById('before-preview').classList.remove('hidden');
+                    document.getElementById('comparison-before').src = e.target.result;
+                    checkBothImages();
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+
+        document.getElementById('after-image').addEventListener('change', function(e) {
+            const file = e.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    document.getElementById('after-img').src = e.target.result;
+                    document.getElementById('after-preview').classList.remove('hidden');
+                    document.getElementById('comparison-after').src = e.target.result;
+                    checkBothImages();
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+
+        function checkBothImages() {
+            const beforeImg = document.getElementById('before-img').src;
+            const afterImg = document.getElementById('after-img').src;
+            
+            if (beforeImg && afterImg && beforeImg !== window.location.href && afterImg !== window.location.href) {
+                document.getElementById('comparison-section').classList.remove('hidden');
+                document.getElementById('analysis-tools').classList.remove('hidden');
+            }
+        }
+
+        // Comparison slider functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const slider = document.querySelector('.comparison-slider');
+            const handle = document.querySelector('.comparison-handle');
+            const beforeImage = document.querySelector('.before-image');
+            
+            if (handle && beforeImage && slider) {
+                let isDragging = false;
+
+                handle.addEventListener('mousedown', () => {
+                    isDragging = true;
+                });
+
+                document.addEventListener('mousemove', (e) => {
+                    if (!isDragging) return;
+
+                    const rect = slider.getBoundingClientRect();
+                    const x = Math.max(0, Math.min(e.clientX - rect.left, rect.width));
+                    const percentage = (x / rect.width) * 100;
+
+                    handle.style.left = `${percentage}%`;
+                    beforeImage.style.clipPath = `inset(0 ${100 - percentage}% 0 0)`;
+                });
+
+                document.addEventListener('mouseup', () => {
+                    isDragging = false;
+                });
+            }
+        });
+    </script>
+    <script src="resources/js/app.js"></script>
+</body>
+</html>
